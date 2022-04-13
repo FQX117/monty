@@ -16,8 +16,7 @@ stack_t *new;
 new = malloc(sizeof(stack_t));
 if (!new)
 {
-printf("L%u: %s", n, "usage: push integer\n");
-exit(EXIT_FAILURE);
+exit(2);
 }
 new->n = n;
 new->next = NULL;
@@ -27,5 +26,5 @@ if (*stack)
 (*stack)->prev = new;
 new->next = *stack;
 }
-    *stack = new;
+*stack = new;
 }

@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define LIMITERS " ,!?\'\"\t\n\r"
 
 /*libraies*/
 #include <stdio.h>
@@ -40,6 +41,9 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
-void err(int e);
+void err1(stack_t **stack, unsigned int line_number, FILE *m_file, int x);
+int err2(stack_t **stack, unsigned int line_number, int i);
+void parse_execute(FILE *monty_file, instruction_t instructions[]);
+void free_all(stack_t *stack);
 
 #endif
